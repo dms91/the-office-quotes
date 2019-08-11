@@ -48,9 +48,10 @@ public class QuoteController {
     }
 
     // Temporary ***********************************************
+    /*
     @RequestMapping(method=RequestMethod.POST, value="/quotes")
     public void postQuote(@RequestBody Quote q) {
         quoteService.saveQuote(q);
     }
-
+*/
 }
