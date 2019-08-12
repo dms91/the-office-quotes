@@ -40,11 +40,8 @@ public class QuoteController {
     @RequestMapping("/quotes/random")
     public Quote getRandomQuote() {
         Random r = new Random();
-        List<Quote> allQuotes = quoteService.findAllQuotes();
-
-        int randomIndex = r.nextInt(allQuotes.size());
-
-        return allQuotes.get(randomIndex);
+        
+        return quoteService.findAllQuotes().get(r.nextInt(quoteService.findAllQuotes().size()));
     }
 
     // Temporary ***********************************************
