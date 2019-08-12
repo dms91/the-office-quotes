@@ -12,3 +12,7 @@ random: /api/quotes/random
 http://the-office-quotes.herokuapp.com/api/quotes/person/michael
 
 Returns all quotes by michael scott
+
+# Contributing quotes
+If you would like to suggest quotes to be added please clone or download
+the 'suggestions.txt' file, add your suggestions, and submit a pull request.
