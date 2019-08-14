@@ -18,8 +18,8 @@ If you would like to suggest quotes to be added please clone or download
 the 'suggestions.txt' file, add your suggestions, and submit a pull request.
 
 Please submit suggestions in the following format:  
-name, quote
+name: quote
 
 Example:  
-Dwight, Identity theft is not a joke, Jim!  
-Michael, I am Beyonce always.
+Dwight: Identity theft is not a joke, Jim!  
+Michael: I am Beyonce always.
