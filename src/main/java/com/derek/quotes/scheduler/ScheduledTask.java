@@ -32,6 +32,9 @@ public class ScheduledTask {
             String[] words = line.split(":");
             q.setPerson(words[0].trim());
             q.setQuote(words[1].trim());
+
+            quoteService.saveQuote(q);
+            log.info("****** saved quote ******");
         }
         br.close();
         fw = new FileWriter(file, false);
