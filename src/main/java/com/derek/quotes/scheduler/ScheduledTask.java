@@ -17,11 +17,10 @@ public class ScheduledTask {
     private QuoteService quoteService;
 
     private static final Logger log = LoggerFactory.getLogger(ScheduledTask.class);
-    private File filename = new File("quotes/src/main/resources/suggestions.txt");
+    private File filename = new File("/app/quotes/src/main/resources/suggestions.txt");
 
     @Scheduled(fixedRate = 10000)
     public void reportSuggestions() throws FileNotFoundException {
-        System.out.println(filename.getAbsolutePath());
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
             while ((line = br.readLine()) != null) {
