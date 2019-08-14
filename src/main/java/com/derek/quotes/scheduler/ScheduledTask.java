@@ -21,7 +21,7 @@ public class ScheduledTask {
     private File file = new File("src/main/resources/suggestions.txt");
     private FileWriter fw;
 
-    @Scheduled(fixedRate = 10000)
+    @Scheduled(fixedRate = 1000)
     public void reportSuggestions() throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(file));
         String line = "";
