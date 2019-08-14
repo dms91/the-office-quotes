@@ -40,11 +40,9 @@ public class QuoteController {
     @RequestMapping("/quotes/random")
     public Quote getRandomQuote() {
         Random r = new Random();
-        
         return quoteService.findAllQuotes().get(r.nextInt(quoteService.findAllQuotes().size()));
     }
 
-    // Temporary ***********************************************
     /*
     @RequestMapping(method=RequestMethod.POST, value="/quotes")
     public void postQuote(@RequestBody Quote q) {

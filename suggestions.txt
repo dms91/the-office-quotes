@@ -1,7 +1,0 @@
-Suggestion format:
-name, quote
-
-Example:
-Dwight, Identity theft is not a joke, Jim!
-
-## Suggestions below ##
