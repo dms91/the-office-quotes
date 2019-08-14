@@ -20,7 +20,7 @@ public class ScheduledTask {
 
     @Scheduled(fixedRate = 10000)
     public void reportSuggestions() throws FileNotFoundException {
-        String filename = "suggestions.txt";
+        String filename = "/src/main/java/com/derek/quotes/scheduler/suggestions.txt";
 
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
