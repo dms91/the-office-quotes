@@ -17,7 +17,7 @@ public class ScheduledTask {
     private QuoteService quoteService;
 
     private static final Logger log = LoggerFactory.getLogger(ScheduledTask.class);
-    private String filename = "resources/suggestions.txt";
+    private String filename = "resources/suggestions";
 
     @Scheduled(fixedRate = 10000)
     public void reportSuggestions() throws FileNotFoundException {
