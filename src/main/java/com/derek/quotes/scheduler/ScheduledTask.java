@@ -1,5 +1,6 @@
 package com.derek.quotes.scheduler;
 
+import com.derek.quotes.entity.Quote;
 import com.derek.quotes.service.QuoteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,21 +18,23 @@ public class ScheduledTask {
     private QuoteService quoteService;
 
     private static final Logger log = LoggerFactory.getLogger(ScheduledTask.class);
-    private File filename = new File("src/main/resources/suggestions.txt");
+    private File file = new File("src/main/resources/suggestions.txt");
+    private FileWriter fw;
 
     @Scheduled(fixedRate = 10000)
-    public void reportSuggestions() throws FileNotFoundException {
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] arr = line.split(":");
-                System.out.println("[0]: " + arr[0]);
-                System.out.println("[1]: " + arr[1]);
+    public void reportSuggestions() throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String line = "";
 
-                line.trim();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        while ((line = br.readLine()) != null) {
+            Quote q = new Quote();
+
+            String[] words = line.split(":");
+            q.setPerson(words[0].trim());
+            q.setQuote(words[1].trim());
         }
+        br.close();
+        fw = new FileWriter(file, false);
+        fw.close();
     }
 }

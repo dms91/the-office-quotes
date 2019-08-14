@@ -25,6 +25,12 @@ public class Quote {
 
     public Quote() { }
 
+    public Quote(long id, String quote, String person) {
+        this.id = id;
+        this.quote = quote;
+        this.person = person;
+    }
+
     public long getId() {
         return id;
     }
