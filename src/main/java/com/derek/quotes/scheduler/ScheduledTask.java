@@ -24,7 +24,11 @@ public class ScheduledTask {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
             while ((line = br.readLine()) != null) {
-                log.info("current line is: " + line);
+                String[] arr = line.split(":");
+                System.out.println("[0]: " + arr[0]);
+                System.out.println("[1]: " + arr[1]);
+
+                line.trim();
             }
         } catch (IOException e) {
             e.printStackTrace();
