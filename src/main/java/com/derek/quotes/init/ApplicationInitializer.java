@@ -1,28 +1,27 @@
-package com.derek.quotes.scheduler;
+package com.derek.quotes.init;
 
 import com.derek.quotes.entity.Quote;
 import com.derek.quotes.service.QuoteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.io.*;
 
-
 @Component
-public class ScheduledTask {
+public class ApplicationInitializer {
 
     @Autowired
     private QuoteService quoteService;
 
-    private static final Logger log = LoggerFactory.getLogger(ScheduledTask.class);
+    private static final Logger log = LoggerFactory.getLogger(ApplicationInitializer.class);
     private File file = new File("src/main/resources/suggestions.txt");
     private FileWriter fw;
 
-    @Scheduled(fixedRate = 1000)
-    public void reportSuggestions() throws IOException {
+    @PostConstruct
+    public void addQuotesOnInit() throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(file));
         String line = "";
 
